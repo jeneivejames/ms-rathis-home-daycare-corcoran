@@ -189,7 +189,12 @@ HTML_PAGE = '''<!DOCTYPE html>
     .hero-content p{font-size:1.1rem;}
     .about-grid,.contact-grid{grid-template-columns:1fr;gap:30px;}
     .section-title{font-size:2rem;}
-    .nav-links{display:none;position:fixed;top:72px;left:0;width:100%;background:#fff;flex-direction:column;padding:20px 6vw;gap:18px;box-shadow:0 10px 30px rgba(0,0,0,.1);}
+    .hero-slider img{object-fit:cover;}
+    .hero-slide-bg{display:none;}
+    .nav-links{display:none;position:fixed;top:72px;left:0;width:100%;background:#fff;flex-direction:column;padding:24px 6vw 30px;gap:18px;box-shadow:0 10px 30px rgba(0,0,0,.1);margin-left:0;align-items:flex-start;}
+    .nav-links a{font-size:1.05rem;padding:2px 0;}
+    .nav-links a:after{display:none;}
+    .nav-links .nav-cta{display:block;width:100%;text-align:center;padding:14px 24px;margin-top:6px;}
     .nav-links.open{display:flex;}
     .hamburger{display:block;}
   }
@@ -216,23 +221,23 @@ HTML_PAGE = '''<!DOCTYPE html>
   <div class="hero">
     <div class="hero-slider" id="heroSlider">
       <div class="hero-slide active">
-        <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1519689680058-324335c77eba?w=1600&q=80')"></div>
+        <div class="hero-slide-bg" style="background-image:url('/static/images/gallery3.jpg')"></div>
         <img src="/static/images/gallery1.jpg" alt="Daycare Photo 1">
       </div>
       <div class="hero-slide">
-        <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=1600&q=80')"></div>
+        <div class="hero-slide-bg" style="background-image:url('/static/images/gallery1.jpg')"></div>
         <img src="/static/images/gallery2.jpg" alt="Daycare Photo 2">
       </div>
       <div class="hero-slide">
-        <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80')"></div>
+        <div class="hero-slide-bg" style="background-image:url('/static/images/gallery5.jpg')"></div>
         <img src="/static/images/gallery3.jpg" alt="Daycare Photo 3">
       </div>
       <div class="hero-slide">
-        <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1471107340929-a87cd0f3b5f5?w=1600&q=80')"></div>
+        <div class="hero-slide-bg" style="background-image:url('/static/images/gallery2.jpg')"></div>
         <img src="/static/images/gallery4.jpg" alt="Daycare Photo 4">
       </div>
       <div class="hero-slide">
-        <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1551882547-ff40c63feebb?w=1600&q=80')"></div>
+        <div class="hero-slide-bg" style="background-image:url('/static/images/gallery4.jpg')"></div>
         <img src="/static/images/gallery5.jpg" alt="Daycare Photo 5">
       </div>
     </div>
