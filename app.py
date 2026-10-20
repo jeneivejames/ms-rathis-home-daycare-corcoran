@@ -196,7 +196,7 @@ HTML_PAGE = '''<!DOCTYPE html>
     .nav-links a:after{display:none;}
     .nav-links .nav-cta{display:block;width:100%;text-align:center;padding:14px 24px;margin-top:6px;}
     .nav-links.open{display:flex;}
-    .hamburger{display:block;}
+    .hamburger{display:block;margin-left:auto;text-align:right;padding:8px;line-height:1;}
   }
   @media(max-width:500px){
     .hero-content h1{font-size:2rem;}
