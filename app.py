@@ -1,7 +1,34 @@
 import os
-from flask import Flask, render_template_string
+from flask import Flask, render_template_string, send_from_directory
 
-app = Flask(__name__, static_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static'))
+def _find_static():
+    """Locate the static/ folder reliably (local, Databricks, and Vercel lambda)."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    for cand in (
+        os.path.join(here, 'static'),                    # normal layout
+        os.path.join(os.path.dirname(here), 'static'),   # lambda may nest api/index.py
+        os.path.join(os.getcwd(), 'static'),             # lambda cwd
+        os.path.join(os.getcwd(), '..', 'static'),       # lambda cwd parent
+    ):
+        if os.path.isdir(cand):
+            return cand
+    return os.path.join(here, 'static')
+
+app = Flask(__name__, static_folder=_find_static())
+
+# Case-insensitive image serving: works whether files are .jpg or .JPG
+# (GitHub upload created .JPG; Vercel's Linux filesystem is case-sensitive)
+@app.route('/static/images/<path:filename>')
+def case_insensitive_images(filename):
+    img_dir = os.path.join(app.static_folder, 'images')
+    target = os.path.join(img_dir, filename)
+    if not os.path.exists(target):
+        base, ext = os.path.splitext(filename)
+        for e in ('.jpg', '.JPG', '.jpeg', '.JPEG', '.png', '.PNG'):
+            alt = base + e
+            if os.path.exists(os.path.join(img_dir, alt)):
+                return send_from_directory(img_dir, alt)
+    return send_from_directory(img_dir, filename)
 
 HTML_PAGE = '''<!DOCTYPE html>
 <html lang="en">
