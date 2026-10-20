@@ -1,6 +1,7 @@
+import os
 from flask import Flask, render_template_string
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static'))
 
 HTML_PAGE = '''<!DOCTYPE html>
 <html lang="en">
