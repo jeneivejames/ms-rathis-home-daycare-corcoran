@@ -222,23 +222,7 @@ HTML_PAGE = '''<!DOCTYPE html>
     <div class="hero-slider" id="heroSlider">
       <div class="hero-slide active">
         <div class="hero-slide-bg" style="background-image:url('/static/images/gallery3.jpg')"></div>
-        <img src="/static/images/gallery1.jpg" alt="Daycare Photo 1">
-      </div>
-      <div class="hero-slide">
-        <div class="hero-slide-bg" style="background-image:url('/static/images/gallery1.jpg')"></div>
-        <img src="/static/images/gallery2.jpg" alt="Daycare Photo 2">
-      </div>
-      <div class="hero-slide">
-        <div class="hero-slide-bg" style="background-image:url('/static/images/gallery5.jpg')"></div>
-        <img src="/static/images/gallery3.jpg" alt="Daycare Photo 3">
-      </div>
-      <div class="hero-slide">
-        <div class="hero-slide-bg" style="background-image:url('/static/images/gallery2.jpg')"></div>
-        <img src="/static/images/gallery4.jpg" alt="Daycare Photo 4">
-      </div>
-      <div class="hero-slide">
-        <div class="hero-slide-bg" style="background-image:url('/static/images/gallery4.jpg')"></div>
-        <img src="/static/images/gallery5.jpg" alt="Daycare Photo 5">
+        <img src="/static/images/gallery3.jpg" alt="Daycare Photo">
       </div>
     </div>
     <div class="hero-overlay"></div>
